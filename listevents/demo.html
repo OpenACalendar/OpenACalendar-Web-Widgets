@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<title>List Events Demo</title>
+		<link rel="stylesheet" type="text/css" href="listevents.css">
+	</head>
+	<body>
+		<form action="" onsubmit="showWidget(); return false;">
+
+			<p>2nd parameter</p>
+
+			<div>
+				<label>site URL</label>
+				<input type="text" id="siteEntry" value="demo.hasacalendar.co.uk"> 
+			</div>
+
+			<p>Options in 3rd parameter</p>
+
+			<div>
+				<label>eventCount</label>
+				<input type="text" id="eventCountEntry"> 
+			</div>
+			<div>
+				<label>title</label>
+				<input type="text" id="titleEntry"> 
+			</div>
+			<div>
+				<label>maxStringLength</label>
+				<input type="text" id="maxStringLengthEntry"> 
+			</div>
+			<div>
+				<label>groupID</label>
+				<input type="text" id="groupIDEntry"> 
+			</div>
+			<div>
+				<label>venueID</label>
+				<input type="text" id="venueIDEntry"> 
+			</div>
+			<div>
+				<label>countryCode</label>
+				<input type="text" id="countryCodeEntry"> 
+			</div>
+			<div>
+				<label>openInNewWindow</label>
+				<select id="openInNewWindowEntry"> 
+					<option value="0" selected>False</option>
+					<option value="1">True</option>
+				</select>
+			</div>
+
+			<input type="submit" value="Show">
+
+		</form>
+
+		<div id="WidgetHerePlease" class="widgetLiveSample"></div>
+		
+		<script src="listevents.js"></script>
+		<script>
+			function showWidget() {
+				var dict = { };
+				var site = document.getElementById('siteEntry').value;
+				var i1 = document.getElementById('eventCountEntry').value;
+				if (i1) dict.eventCount = i1;
+				var i2 = document.getElementById('titleEntry').value;
+				if (i2) dict.title = i2;
+				var i3 = document.getElementById('maxStringLengthEntry').value;
+				if (i3) dict.maxStringLength = i3;
+				var i4 = document.getElementById('groupIDEntry').value;
+				if (i4) dict.groupID = i4;
+				var i5 = document.getElementById('venueIDEntry').value;
+				if (i5) dict.venueID = i5;
+				var i5a = document.getElementById('countryCodeEntry').value;
+				if (i5a) dict.countryCode = i5a;
+				var i6 = document.getElementById('openInNewWindowEntry').value;
+				dict.openInNewWindow = (i6 == "1");
+				OpenACalendarWidgetListEvents.place('WidgetHerePlease',site,dict);
+			}
+		</script>
+		
+	</body>
+	
+</html>
