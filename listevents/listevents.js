@@ -14,7 +14,8 @@ var OpenACalendarWidgetListEvents = {
 			title: 'Events',
 			maxStringLength: 300,
 			groupID: undefined,
-			openInNewWindow: true
+			openInNewWindow: true,
+			sslAvailable: false
 		}
 		for (var prop in options) {
 			if (options.hasOwnProperty(prop)) {
@@ -66,15 +67,18 @@ var OpenACalendarWidgetListEvents = {
 				titleDiv.innerHTML = data.title;
 			}
 		}
-		var url;
+		var url = "http://";
+		if (usingOptions.sslAvailable && "https:" == document.location.protocol) {
+			url = "https://";
+		}
 		if (usingOptions.groupID) {
-			url = "http://"+site+"/api1/group/"+usingOptions.groupID+"/events.jsonp";
+			url += site+"/api1/group/"+usingOptions.groupID+"/events.jsonp";
 		} else if (usingOptions.venueID) {
-			url = "http://"+site+"/api1/venue/"+usingOptions.venueID+"/events.jsonp";
+			url += site+"/api1/venue/"+usingOptions.venueID+"/events.jsonp";
 		} else if (usingOptions.countryCode) {
-			url = "http://"+site+"/api1/country/"+usingOptions.countryCode.toUpperCase()+"/events.jsonp";
+			url += site+"/api1/country/"+usingOptions.countryCode.toUpperCase()+"/events.jsonp";
 		} else {			
-			url = "http://"+site+"/api1/events.jsonp";
+			url += site+"/api1/events.jsonp";
 		}
 
 		var script = document.createElement("script");

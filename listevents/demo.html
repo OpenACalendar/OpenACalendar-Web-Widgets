@@ -50,6 +50,13 @@
 					<option value="1">True</option>
 				</select>
 			</div>
+			<div>
+				<label>sslAvailable</label>
+				<select id="sslAvailableEntry"> 
+					<option value="0" selected>False</option>
+					<option value="1">True</option>
+				</select>
+			</div>
 
 			<input type="submit" value="Show">
 
@@ -76,6 +83,8 @@
 				if (i5a) dict.countryCode = i5a;
 				var i6 = document.getElementById('openInNewWindowEntry').value;
 				dict.openInNewWindow = (i6 == "1");
+				var i7 = document.getElementById('sslAvailableEntry').value;
+				dict.sslAvailable = (i7 == "1");
 				OpenACalendarWidgetListEvents.place('WidgetHerePlease',site,dict);
 			}
 		</script>
