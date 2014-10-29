@@ -13,7 +13,11 @@ var OpenACalendarWidgetListEvents = {
 			eventCount: 5,
 			title: 'Events',
 			maxStringLength: 300,
+			countryCode: undefined,
 			groupID: undefined,
+			areaID: undefined,
+			venueID: undefined,
+			curatedListID: undefined,
 			openInNewWindow: true,
 			sslAvailable: false
 		}
@@ -29,6 +33,10 @@ var OpenACalendarWidgetListEvents = {
 			moreURL = "http://"+site+"/group/"+usingOptions.groupID;
 		} else if (usingOptions.venueID) {
 			moreURL = "http://"+site+"/venue/"+usingOptions.venueID;
+		} else if (usingOptions.areaID) {
+			moreURL = "http://"+site+"/area/"+usingOptions.areaID;
+		} else if (usingOptions.curatedListID) {
+			moreURL = "http://"+site+"/curatedlist/"+usingOptions.curatedListID;
 		} else if (usingOptions.countryCode) {
 			moreURL = "http://"+site+"/country/"+usingOptions.countryCode.toUpperCase();
 		} else {
@@ -75,6 +83,10 @@ var OpenACalendarWidgetListEvents = {
 			url += site+"/api1/group/"+usingOptions.groupID+"/events.jsonp";
 		} else if (usingOptions.venueID) {
 			url += site+"/api1/venue/"+usingOptions.venueID+"/events.jsonp";
+		} else if (usingOptions.areaID) {
+			url += site+"/api1/area/"+usingOptions.areaID+"/events.jsonp";
+		} else if (usingOptions.curatedListID) {
+			url += site+"/api1/curatedlist/"+usingOptions.curatedListID+"/events.jsonp";
 		} else if (usingOptions.countryCode) {
 			url += site+"/api1/country/"+usingOptions.countryCode.toUpperCase()+"/events.jsonp";
 		} else {			

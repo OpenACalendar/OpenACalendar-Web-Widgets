@@ -32,12 +32,20 @@
 				<input type="text" id="maxStringLengthEntry"> 
 			</div>
 			<div>
+				<label>areaID</label>
+				<input type="text" id="areaIDEntry"> 
+			</div>
+			<div>
 				<label>groupID</label>
 				<input type="text" id="groupIDEntry"> 
 			</div>
 			<div>
 				<label>venueID</label>
 				<input type="text" id="venueIDEntry"> 
+			</div>
+			<div>
+				<label>curatedListID</label>
+				<input type="text" id="curatedListIDEntry"> 
 			</div>
 			<div>
 				<label>countryCode</label>
@@ -70,21 +78,41 @@
 				var dict = { };
 				var site = document.getElementById('siteEntry').value;
 				var i1 = document.getElementById('eventCountEntry').value;
-				if (i1) dict.eventCount = i1;
+				if (i1) {
+					dict.eventCount = i1;
+				}
 				var i2 = document.getElementById('titleEntry').value;
-				if (i2) dict.title = i2;
+				if (i2) {
+					dict.title = i2;
+				}
 				var i3 = document.getElementById('maxStringLengthEntry').value;
-				if (i3) dict.maxStringLength = i3;
+				if (i3) {
+					dict.maxStringLength = i3;
+				}
 				var i4 = document.getElementById('groupIDEntry').value;
-				if (i4) dict.groupID = i4;
+				if (i4) {
+					dict.groupID = i4;
+				}
 				var i5 = document.getElementById('venueIDEntry').value;
-				if (i5) dict.venueID = i5;
+				if (i5) {
+					dict.venueID = i5;
+				}
 				var i5a = document.getElementById('countryCodeEntry').value;
-				if (i5a) dict.countryCode = i5a;
+				if (i5a) {
+					dict.countryCode = i5a;
+				}
 				var i6 = document.getElementById('openInNewWindowEntry').value;
 				dict.openInNewWindow = (i6 == "1");
 				var i7 = document.getElementById('sslAvailableEntry').value;
 				dict.sslAvailable = (i7 == "1");
+				var i8 = document.getElementById('areaIDEntry').value;
+				if (i8) {
+					dict.areaID = i8;
+				}
+				var i9 = document.getElementById('curatedListIDEntry').value;
+				if (i9) {
+					dict.curatedListID = i9;
+				}
 				OpenACalendarWidgetListEvents.place('WidgetHerePlease',site,dict);
 			}
 		</script>
