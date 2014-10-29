@@ -32,7 +32,7 @@ div.OpenACalendarWidgetListEventsData ul {
 div.OpenACalendarWidgetListEventsData div.OpenACalendarWidgetListEventsHeader {
   color: white;
   font-size: 14pt;
-  background: #2f569b;
+  background: #004300;
   text-align: center;
   padding: 5px;
   margin: 0;
@@ -133,7 +133,7 @@ div.OpenACalendarWidgetListEventsData div.OpenACalendarWidgetListEventsFooter {
   color: white;
   font-size: 10pt;
   font-style: italic;
-  background: #2f569b;
+  background: #004300;
   text-align: center;
   padding: 5px;
   margin: 0;
@@ -155,8 +155,8 @@ div.OpenACalendarWidgetListEventsData div.OpenACalendarWidgetListEventsFooter a:
   text-decoration: underline;
 }
 div.OpenACalendarWidgetListEventsData div.OpenACalendarWidgetListEventsFooter div.OpenACalendarWidgetFooterMore {
-  background: #2f569b;
+  background: #004300;
 }
 div.OpenACalendarWidgetListEventsData div.OpenACalendarWidgetListEventsFooter div.OpenACalendarWidgetFooterCredit {
-  background: #2f569b;
+  background: #004300;
 }
